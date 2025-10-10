@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #0a0a0a;
+}
+
+main {
+  flex: 1;
+  background: #0a0a0a;
+}
+
+/* Genel container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+  background: #0a0a0a;
+}

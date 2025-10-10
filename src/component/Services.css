@@ -1,0 +1,130 @@
+.services {
+  min-height: calc(100vh - 80px);
+  padding: 2rem;
+  background-color: #0a0a0a;
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services-container h1 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.services-intro {
+  text-align: center;
+  color: #999;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.service-card {
+  background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.5);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid #333;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.1);
+  border-color: #666;
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.service-card h3 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.service-card p {
+  color: #b0b0b0;
+  line-height: 1.6;
+}
+
+.why-choose-us {
+  background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+  padding: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.5);
+  margin-top: 3rem;
+  border: 1px solid #333;
+}
+
+.why-choose-us h2 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.reasons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.reason {
+  padding: 1.5rem;
+  background: #0f0f0f;
+  border-radius: 8px;
+  border: 1px solid #333;
+  transition: all 0.3s ease;
+}
+
+.reason:hover {
+  border-color: #666;
+  transform: translateY(-5px);
+}
+
+.reason h4 {
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.reason p {
+  color: #999;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .services-container h1 {
+    font-size: 2rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .reasons {
+    grid-template-columns: 1fr;
+  }
+  
+  .why-choose-us {
+    padding: 2rem 1rem;
+  }
+}
