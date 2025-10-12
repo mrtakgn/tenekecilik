@@ -3,9 +3,9 @@
   line-height: 1.5;
   font-weight: 400;
   
-  color-scheme: dark;
-  color: #e0e0e0;
-  background-color: #0a0a0a;
+  color-scheme: light;
+  color: #1a1a1a;
+  background-color: #ffffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -22,13 +22,13 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: #0a0a0a;
-  color: #e0e0e0;
+  background: #ffffff;
+  color: #1a1a1a;
 }
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
-  color: #ffffff;
+  color: #000000;
 }
 
 a {
@@ -47,14 +47,14 @@ button {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1a1a;
+  background: #f0f0f0;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333;
+  background: #c0c0c0;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #a0a0a0;
 }

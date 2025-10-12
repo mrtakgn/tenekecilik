@@ -6,10 +6,12 @@ import About from './component/About'
 import Gallery from './component/Gallery'
 import Services from './component/Services'
 import Contact from './component/Contact'
+import ScrollToTop from './component/ScrollToTop'
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="app">
         <Navbar />
         <main>

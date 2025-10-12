@@ -1,15 +1,33 @@
 .home {
   min-height: calc(100vh - 80px);
-  background: #0a0a0a;
+  background: #ffffff;
+  animation: pageSlideIn 0.6s ease-out;
+}
+
+@keyframes pageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .hero {
-  background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2d2d2d 100%);
-  color: white;
+  background-image: 
+    linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 240, 240, 0.92) 100%),
+    url('https://images.pexels.com/photos/48882/roof-plate-tiles-brick-black-48882.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #000000;
   padding: 6rem 2rem;
   text-align: center;
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .hero::before {
@@ -20,8 +38,8 @@
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    radial-gradient(circle at 20% 50%, rgba(0, 0, 0, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.02) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -42,31 +60,28 @@
 .title-main {
   font-size: 3.5rem;
   font-weight: 300;
-  color: #cccccc;
+  color: #333333;
   letter-spacing: 2px;
 }
 
 .title-accent {
   font-size: 4rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+  color: #000000;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
 .hero-description {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #999999;
+  color: #444444;
   font-weight: 400;
 }
 
 .hero-subtitle {
   font-size: 1.3rem;
   opacity: 0.9;
-  color: #e0e0e0;
+  color: #1a1a1a;
   font-weight: 600;
   margin-bottom: 3rem;
 }
@@ -89,31 +104,31 @@
 .stat-number {
   font-size: 3rem;
   font-weight: 800;
-  color: #ffffff;
+  color: #000000;
   line-height: 1;
 }
 
 .stat-label {
   font-size: 1rem;
-  color: #999999;
+  color: #555555;
   margin-top: 0.5rem;
 }
 
 .stat-divider {
   width: 2px;
   height: 60px;
-  background: linear-gradient(to bottom, transparent, #666666, transparent);
+  background: linear-gradient(to bottom, transparent, #cccccc, transparent);
 }
 
 .features {
   padding: 4rem 2rem;
-  background: #141414;
+  background: #fafafa;
 }
 
 .section-title {
   text-align: center;
   font-size: 2.5rem;
-  color: #ffffff;
+  color: #000000;
   margin-bottom: 3rem;
   font-weight: 700;
 }
@@ -127,11 +142,11 @@
 }
 
 .feature-card {
-  background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+  background: #ffffff;
   padding: 2.5rem;
   border-radius: 15px;
-  border: 1px solid #333333;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
   text-align: center;
   transition: all 0.3s ease;
   position: relative;
@@ -145,7 +160,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.03), transparent);
   transition: left 0.5s;
 }
 
@@ -155,32 +170,30 @@
 
 .feature-card:hover {
   transform: translateY(-10px);
-  border-color: #666666;
-  box-shadow: 0 12px 48px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
 }
 
 .feature-icon {
   font-size: 3.5rem;
   margin-bottom: 1.5rem;
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
 }
 
 .feature-card h3 {
-  color: #ffffff;
+  color: #000000;
   margin-bottom: 1rem;
   font-size: 1.5rem;
   font-weight: 700;
 }
 
 .feature-card p {
-  color: #b0b0b0;
+  color: #555555;
   line-height: 1.8;
   font-size: 1.05rem;
 }
 
 .services-preview {
   padding: 4rem 2rem;
-  background: #0a0a0a;
+  background: #ffffff;
 }
 
 .services-list {
@@ -192,28 +205,30 @@
 }
 
 .service-item {
-  background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+  background: #ffffff;
   padding: 1.5rem 2rem;
   border-radius: 10px;
-  border-left: 4px solid #ffffff;
-  color: #e0e0e0;
+  border: 1px solid #e0e0e0;
+  border-left: 4px solid #000000;
+  color: #1a1a1a;
   font-size: 1.1rem;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
   gap: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .service-bullet {
-  color: #ffffff;
+  color: #000000;
   font-size: 1.5rem;
   font-weight: bold;
 }
 
 .service-item:hover {
   transform: translateX(10px);
-  background: linear-gradient(135deg, #252525 0%, #333333 100%);
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  background: #fafafa;
 }
 
 @media (max-width: 768px) {

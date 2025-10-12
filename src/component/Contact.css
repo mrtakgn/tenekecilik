@@ -1,7 +1,19 @@
 .contact {
   min-height: calc(100vh - 80px);
   padding: 2rem;
-  background-color: #0a0a0a;
+  background-color: #ffffff;
+  animation: pageSlideIn 0.6s ease-out;
+}
+
+@keyframes pageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .contact-container {
@@ -11,7 +23,7 @@
 
 .contact-container h1 {
   text-align: center;
-  color: #ffffff;
+  color: #000000;
   font-size: 2.5rem;
   margin-bottom: 3rem;
   font-weight: 700;
@@ -25,16 +37,16 @@
 
 .contact-info,
 .contact-form-wrapper {
-  background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+  background: #ffffff;
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 2px 20px rgba(0,0,0,0.5);
-  border: 1px solid #333;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  border: 1px solid #e0e0e0;
 }
 
 .contact-info h2,
 .contact-form-wrapper h2 {
-  color: #ffffff;
+  color: #000000;
   font-size: 1.8rem;
   margin-bottom: 2rem;
 }
@@ -52,13 +64,13 @@
 }
 
 .info-item h3 {
-  color: #e0e0e0;
+  color: #1a1a1a;
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
 }
 
 .info-item p {
-  color: #b0b0b0;
+  color: #555555;
   line-height: 1.6;
   margin: 0;
 }
@@ -75,7 +87,7 @@
 }
 
 .form-group label {
-  color: #e0e0e0;
+  color: #1a1a1a;
   margin-bottom: 0.5rem;
   font-weight: 500;
 }
@@ -83,26 +95,26 @@
 .form-group input,
 .form-group textarea {
   padding: 0.8rem;
-  border: 1px solid #333;
+  border: 1px solid #d0d0d0;
   border-radius: 5px;
   font-size: 1rem;
   font-family: inherit;
   transition: border-color 0.3s;
-  background: #0f0f0f;
-  color: #e0e0e0;
+  background: #ffffff;
+  color: #1a1a1a;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #666;
+  border-color: #000000;
 }
 
 .submit-btn {
-  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+  background: #000000;
   color: #ffffff;
   padding: 1rem 2rem;
-  border: 1px solid #666;
+  border: none;
   border-radius: 5px;
   font-size: 1.1rem;
   cursor: pointer;
@@ -112,8 +124,8 @@
 
 .submit-btn:hover {
   transform: translateY(-2px);
-  background: linear-gradient(135deg, #3d3d3d 0%, #2a2a2a 100%);
-  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+  background: #1a1a1a;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 @media (max-width: 968px) {

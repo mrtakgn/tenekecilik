@@ -8,12 +8,24 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: #0a0a0a;
+  background: #ffffff;
 }
 
 main {
   flex: 1;
-  background: #0a0a0a;
+  background: #ffffff;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Genel container */
@@ -26,5 +38,5 @@ main {
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;
-  background: #0a0a0a;
+  background: #ffffff;
 }
