@@ -10,7 +10,7 @@ function About() {
         <section className="about-section">
           <h2>Biz Kimiz?</h2>
           <p>
-            İzmir ve Urla'da yıllardır hizmet veren tenekecilik firması olarak, 
+            2001 yılından beri İzmir ve Urla'da hizmet veren tenekecilik firması olarak, 
             çatı sistemleri, oluk montajı, izolasyon ve tüm saç işlerinde uzmanız. 
             Deneyimli kadromuz ve kaliteli malzemelerimiz ile binanızın çatı ihtiyaçlarına 
             profesyonel çözümler sunuyoruz.
