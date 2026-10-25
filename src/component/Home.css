@@ -17,12 +17,12 @@
 
 .hero {
   background-image: 
-    linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 240, 240, 0.92) 100%),
-    url('https://images.pexels.com/photos/48882/roof-plate-tiles-brick-black-48882.jpeg');
+    linear-gradient(135deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.48) 100%),
+    url('../../gülhan/oluk-sistemleri-2-1.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: #000000;
+  color: #ffffff;
   padding: 6rem 2rem;
   text-align: center;
   position: relative;
@@ -57,31 +57,41 @@
   margin-bottom: 2rem;
 }
 
+.title-brand {
+  font-size: 5.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 3px;
+  line-height: 1;
+  text-shadow: 3px 3px 12px rgba(0,0,0,0.85);
+}
+
 .title-main {
-  font-size: 3.5rem;
-  font-weight: 300;
-  color: #333333;
-  letter-spacing: 2px;
+  font-size: 2.25rem;
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }
 
 .title-accent {
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 800;
-  color: #000000;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }
 
 .hero-description {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #444444;
+  color: #ffffff;
   font-weight: 400;
 }
 
 .hero-subtitle {
   font-size: 1.3rem;
   opacity: 0.9;
-  color: #1a1a1a;
+  color: #ffffff;
   font-weight: 600;
   margin-bottom: 3rem;
 }
@@ -104,20 +114,20 @@
 .stat-number {
   font-size: 3rem;
   font-weight: 800;
-  color: #000000;
+  color: #ffffff;
   line-height: 1;
 }
 
 .stat-label {
   font-size: 1rem;
-  color: #555555;
+  color: rgba(255, 255, 255, 0.9);
   margin-top: 0.5rem;
 }
 
 .stat-divider {
   width: 2px;
   height: 60px;
-  background: linear-gradient(to bottom, transparent, #cccccc, transparent);
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.75), transparent);
 }
 
 .features {
@@ -176,6 +186,7 @@
 .feature-icon {
   font-size: 3.5rem;
   margin-bottom: 1.5rem;
+  filter: grayscale(1);
 }
 
 .feature-card h3 {
@@ -232,8 +243,12 @@
 }
 
 @media (max-width: 768px) {
+  .title-brand {
+    font-size: 4rem;
+  }
+
   .title-main {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
   
   .title-accent {

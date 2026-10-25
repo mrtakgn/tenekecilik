@@ -23,7 +23,7 @@ function Contact() {
   };
 
   return (
-    <div className="contact">
+    <div className="contact" id="iletisim">
       <div className="contact-container">
         <h1>İletişim</h1>
         
@@ -126,4 +126,3 @@ function Contact() {
 }
 
 export default Contact;
-

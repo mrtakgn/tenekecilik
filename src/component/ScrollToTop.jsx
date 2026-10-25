@@ -1,15 +1,28 @@
-import { useEffect } from 'react';
+import { useLayoutEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    if (hash) {
+      const frameId = window.requestAnimationFrame(() => {
+        const target = document.getElementById(hash.slice(1));
+        if (!target) return;
+
+        const navbarHeight = document.querySelector('.navbar')?.getBoundingClientRect().height ?? 0;
+        const top = target.getBoundingClientRect().top + window.scrollY - navbarHeight - 12;
+
+        window.scrollTo({ top, behavior: 'smooth' });
+      });
+
+      return () => window.cancelAnimationFrame(frameId);
+    }
+
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [pathname, hash]);
 
   return null;
 }
 
 export default ScrollToTop;
-

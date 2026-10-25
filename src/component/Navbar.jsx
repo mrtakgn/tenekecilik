@@ -17,7 +17,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <h1>⚡ Tenekecilik Ustası</h1>
+        <h1>Gülhan Tenekecilik</h1>
       </div>
       
       <button className="hamburger" onClick={toggleMenu} aria-label="Menü">
@@ -28,10 +28,10 @@ function Navbar() {
 
       <ul className={`navbar-list ${isMenuOpen ? "active" : ""}`}>
         <li><Link to="/" onClick={closeMenu}>Anasayfa</Link></li>
-        <li><Link to="/hakkimizda" onClick={closeMenu}>Hakkımızda</Link></li>
+        <li><Link to="/#hakkimizda" onClick={closeMenu}>Hakkımızda</Link></li>
         <li><Link to="/galeri" onClick={closeMenu}>Galeri</Link></li>
-        <li><Link to="/hizmetlerimiz" onClick={closeMenu}>Hizmetlerimiz</Link></li>
-        <li><Link to="/iletisim" onClick={closeMenu}>İletişim</Link></li>
+        <li><Link to="/#hizmetlerimiz" onClick={closeMenu}>Hizmetlerimiz</Link></li>
+        <li><Link to="/#iletisim" onClick={closeMenu}>İletişim</Link></li>
       </ul>
     </nav>
   );

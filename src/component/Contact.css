@@ -61,6 +61,7 @@
 .info-icon {
   font-size: 2rem;
   min-width: 40px;
+  filter: grayscale(1);
 }
 
 .info-item h3 {

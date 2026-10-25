@@ -1,70 +1,97 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Gallery.css';
 
+const galleryFiles = import.meta.glob('../../gülhan/*.{jpeg,mp4}', {
+  eager: true,
+  import: 'default',
+  query: '?url',
+});
+
+const galleryItems = Object.entries(galleryFiles)
+.sort(([firstPath], [secondPath]) => firstPath.localeCompare(secondPath, 'tr', { numeric: true }))
+.map(([path, src]) => {
+  const isVideo = /\.mp4$/i.test(path);
+
+  return { id: path, src, isVideo };
+});
+
+export function GalleryPreview() {
+  const photos = galleryItems.filter((item) => !item.isVideo).slice(0, 4);
+
+  return (
+    <section className="gallery-preview" aria-labelledby="gallery-preview-title">
+      <h2 id="gallery-preview-title">Yaptığımız İşlerden</h2>
+      <div className="gallery-grid">
+        {photos.map((item, index) => (
+          <div key={item.id} className="gallery-item">
+            <div className="gallery-image">
+              <img src={item.src} alt={`Yapılan işlerden örnek ${index + 1}`} loading="lazy" />
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function Gallery() {
-  // Galeri resimleri
-  const galleryItems = [
-    { 
-      id: 1, 
-      title: "Eksiz Oluk Montajı", 
-      desc: "Urla villa projesi",
-      image: "https://images.pexels.com/photos/162539/architecture-building-amsterdam-blue-sky-162539.jpeg?auto=compress&cs=tinysrgb&w=600"
-    },
-    { 
-      id: 2, 
-      title: "Çatı İzolasyonu", 
-      desc: "İzmir çatı yalıtım işi",
-      image: "https://images.pexels.com/photos/48882/roof-plate-tiles-brick-black-48882.jpeg?auto=compress&cs=tinysrgb&w=600"
-    },
-    { 
-      id: 3, 
-      title: "Yağmur İniş Borusu", 
-      desc: "Komplet iniş borusu montajı",
-      image: "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=600"
-    },
-    { 
-      id: 4, 
-      title: "Duvar Dibi Saç", 
-      desc: "Duvar dibi detay işleri",
-      image: "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=600"
-    },
-    { 
-      id: 5, 
-      title: "Baca Dibi İşleri", 
-      desc: "Baca çevresi su yalıtımı",
-      image: "https://images.pexels.com/photos/262367/pexels-photo-262367.jpeg?auto=compress&cs=tinysrgb&w=600"
-    },
-    { 
-      id: 6, 
-      title: "Kenet Çatı Sistemi", 
-      desc: "Modern kenet çatı uygulaması",
-      image: "https://images.pexels.com/photos/221024/pexels-photo-221024.jpeg?auto=compress&cs=tinysrgb&w=600"
-    }
-  ];
+  const photos = galleryItems.filter((item) => !item.isVideo);
+  const videos = galleryItems.filter((item) => item.isVideo);
+  const [activeSection, setActiveSection] = useState('photos');
 
   return (
     <div className="gallery">
       <div className="gallery-container">
         <h1>Galeri</h1>
-        <p className="gallery-intro">Yaptığımız işlerden bazı örnekler</p>
-        
-        <div className="gallery-grid">
-          {galleryItems.map((item) => (
-            <div key={item.id} className="gallery-item">
-              <div className="gallery-image">
-                <img src={item.image} alt={item.title} loading="lazy" />
-              </div>
-              <div className="gallery-info">
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
-              </div>
-            </div>
-          ))}
+        <p className="gallery-intro">Yaptığımız işlerden fotoğraf ve videolar</p>
+
+        <div className="gallery-toggles">
+          <button
+            type="button"
+            aria-expanded={activeSection === 'photos'}
+            aria-controls="gallery-photos"
+            onClick={() => setActiveSection('photos')}
+          >
+            Görseller
+          </button>
+          <button
+            type="button"
+            aria-expanded={activeSection === 'videos'}
+            aria-controls="gallery-videos"
+            onClick={() => setActiveSection('videos')}
+          >
+            Videolar
+          </button>
         </div>
+
+        <section className="gallery-section" id="gallery-photos" aria-labelledby="gallery-photos-title" hidden={activeSection !== 'photos'}>
+          <h2 id="gallery-photos-title">Görseller</h2>
+          <div className="gallery-grid">
+            {photos.map((item, index) => (
+              <div key={item.id} className="gallery-item">
+                <div className="gallery-image">
+                  <img src={item.src} alt={`Yapılan işlerden örnek ${index + 1}`} loading="lazy" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="gallery-section" id="gallery-videos" aria-labelledby="gallery-videos-title" hidden={activeSection !== 'videos'}>
+          <h2 id="gallery-videos-title">Videolar</h2>
+          <div className="gallery-grid">
+            {videos.map((item, index) => (
+              <div key={item.id} className="gallery-item">
+                <div className="gallery-image">
+                  <video src={item.src} controls preload="metadata" aria-label={`Galeri videosu ${index + 1}`} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
       </div>
     </div>
   );
 }
 
 export default Gallery;
-

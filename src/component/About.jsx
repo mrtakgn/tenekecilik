@@ -3,7 +3,7 @@ import './About.css';
 
 function About() {
   return (
-    <div className="about">
+    <div className="about" id="hakkimizda">
       <div className="about-container">
         <h1>Hakkımızda</h1>
         
@@ -61,4 +61,3 @@ function About() {
 }
 
 export default About;
-
